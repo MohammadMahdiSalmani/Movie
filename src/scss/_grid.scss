@@ -1,0 +1,120 @@
+@use "sass:math";
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.lg-hidden {
+  @media screen and (min-width: 1280px) {
+      display: none !important;
+  }
+}
+
+.md-hidden {
+  @media screen and (min-width:768px) and (max-width:1280px) {
+      display: none !important;
+  }
+}
+
+.xs-hidden {
+  @media screen and (max-width: 768px) {
+      display: none !important;
+  }
+}
+
+.d-lg-flex-column {
+  @media screen and (min-width:1280px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d-md-flex-column {
+  @media screen and (min-width:768px) and (max-width:1280px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d-xs-flex-column {
+  @media screen and (max-width:768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d-lg-flex-row {
+  @media screen and (min-width:1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d-md-flex-row {
+  @media screen and (min-width:768px) and (max-width:1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.d-xs-flex-row {
+  @media screen and (max-width:768px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin column($size) {
+  @for $i from 1 through 12 {
+    .column-#{$size}-#{$i} {
+      width: percentage(math.div($i, 12));
+    }
+  }
+}
+
+@mixin order($size) {
+  @for $i from 1 through 12 {
+    .order-#{$size}-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@media only screen and (max-width:768px) {
+  @include column(xs);
+  @include order(xs);
+}
+
+@media only screen and (min-width:768px) and (max-width:1280px) {
+  @include column(md);
+  @include order(md);
+}
+
+@media only screen and (min-width:1280px) {
+  @include column(lg);
+  @include order(lg);
+}

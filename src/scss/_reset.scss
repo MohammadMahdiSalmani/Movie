@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: English !important;
+}
+
+body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    background-color: lighten($color: $primary, $amount: 5);
+}
+
+::placeholder {
+    font-size: 1.1em;
+    font-family: English;
+}

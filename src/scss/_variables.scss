@@ -1,0 +1,37 @@
+// colors
+$primary : #0d0c11;
+$secondary : #ddbb00;
+$white : #f8f8f8;
+
+$success : #2c962c;
+$danger : #e40a18;
+
+// fonts
+@font-face {
+    font-family: English;
+    src: url(../../public/fonts/chillit.ttf);
+}
+
+
+// for inputs and textarea
+@mixin textbox {
+    border: none;
+    outline: none;
+    resize: none;
+    height: 3.5em;
+    background-color: transparent;
+    border-bottom: 2px solid $secondary;
+    color: $white;
+    padding: 0 2em;
+    border-radius: 5px 5px 0 0;
+    margin: .5em;
+    font-size: 1.1em;
+}
+
+.show {
+    right: 0;
+}
+
+.stop {
+    overflow: hidden;
+}
