@@ -1,0 +1,29 @@
+h1,h2,h3,h4,h5,h6 {
+    color: $white;
+    text-align: center;
+}
+// titles, page title, login, create your account
+h2 {
+    color: $white;
+    font-size: 2em;
+    padding: 1em;
+    justify-content: flex-start !important;
+}
+
+// No result found, story line
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+// CopyRight
+h6 {
+    font-size: .9em;
+}
