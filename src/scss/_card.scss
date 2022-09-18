@@ -107,9 +107,12 @@
                         }
 
                         .card-date {
+                            background-color: $danger;
                             color: $white;
+                            margin: .5em;
+                            padding: .3em;
+                            border-radius: 5px;
                             font-size: 1em;
-                            font-weight: bold;
 
                             @media screen and (max-width: 768px) {
                                 font-size: .8em;

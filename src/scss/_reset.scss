@@ -9,6 +9,14 @@ body {
     width: 100% !important;
     overflow-x: hidden !important;
     background-color: lighten($color: $primary, $amount: 5);
+
+    a {
+        text-decoration: none;
+    
+        &:active,:hover,:visited,:focus{
+            text-decoration: none;
+        }
+    }
 }
 
 ::placeholder {

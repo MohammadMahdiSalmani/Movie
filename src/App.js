@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../src/components/Footer/Footer";
 import Wrapper from "../src/hoc/Wrapper/Wrapper";
 import Home from "./pages/Home";
 import Movie from "./pages/Movie"
@@ -19,7 +18,6 @@ const App = () => {
                         <Route path="/movie/:id" element={<Movie />} />
                     </Routes>
                 </main>
-                <Footer />
             </Wrapper>
         </Router>
     )
