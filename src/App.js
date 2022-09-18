@@ -1,15 +1,28 @@
 import React from "react";
-import Layout from "./components/Layout/Layout";
+import Footer from "../src/components/Footer/Footer";
+import Wrapper from "../src/hoc/Wrapper/Wrapper";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie"
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./scss/styles"
 
 
-class App extends React.Component {
-    render() {
-        return (
-            <Layout />
-        )
-    }
+const App = () => {
+    return (
+        <Router>
+            <Wrapper>
+                <main className="column column-xs-12 column-md-12 column-lg-12">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/movie/:id" element={<Movie />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </Wrapper>
+        </Router>
+    )
 }
 
 export default App
