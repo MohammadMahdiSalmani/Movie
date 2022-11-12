@@ -8,6 +8,7 @@ const Movie = () => {
     const movie = movies.find((item) => {
         return item._id === (id)
     })
+
     return (
         <div className="column column-xs-12 column-md-12 column-lg-12 page">
             <div className="row column-xs-12 column-md-12 column-lg-12 cover">
@@ -21,7 +22,7 @@ const Movie = () => {
 
                         <div className="row column-xs-10 column-md-7 column-lg-7 details">
                             <h2 className="row column-xs-12 column-md-12 column-lg-12">{movie.name}</h2>
-                            <h5 className="row column-xs-12 column-md-12 column-lg-12">Genre: {movie.genre}</h5>
+                            <h5 className="row column-xs-12 column-md-12 column-lg-12">Genre: {movie.genre.map(item => <label>{item}</label>)}</h5>
                             <h5 className="row column-xs-12 column-md-12 column-lg-12">IMDb rate: {movie.imdb}</h5>
                             <h5 className="row column-xs-12 column-md-12 column-lg-12">Release date: {movie.releaseDate}</h5>
                             <h5 className="row column-xs-12 column-md-12 column-lg-12">Running time: {movie.runningTime}</h5>
@@ -30,9 +31,9 @@ const Movie = () => {
                 </div>
 
                 <div className="row column-xs-12 column-md-12 column-lg-12 about">
-                    <div className="column column-xs-12 column-md-7 column-lg-7 storyline">
-                        <h3 className="row column-xs-8 column-md-8 column-lg-8">Story Line</h3>
-                        <p className="row column-xs-10 column-md-8 column-lg-8">
+                    <div className="column column-xs-12 column-md-6 column-lg-6 storyline">
+                        <h3 className="row column-xs-8 column-md-10 column-lg-10">Story Line</h3>
+                        <p className="row column-xs-10 column-md-10 column-lg-10">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Neque, minus ducimus pariatur, sunt possimus, animi dicta
                             recusandae architecto inventore harum quasi vel facere.

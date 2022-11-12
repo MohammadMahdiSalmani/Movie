@@ -34,7 +34,7 @@
                 border-radius: 15px;
                 position: relative;
                 cursor: pointer;
-                margin: .5vw;
+                margin: .5em;
                 transition: all ease-in-out .3s;
                 flex-shrink: 0;
                 -webkit-overflow-scrolling: touch;
@@ -44,11 +44,12 @@
                 @media screen and (max-width: 768px) {
                     width: 18em;
                     height: 25em;
+                    margin: .3em;
                 }
 
                 &:hover {
                     box-shadow: darken($color: $primary, $amount: 50) 0 0 20px -2px;
-                    // transform: scale(1.05);
+                    transform: scale(1.03);
                 }
 
                 .card-thumbnail {
@@ -95,7 +96,7 @@
 
                         .card-rate {
                             background-color: $secondary;
-                            color: $white;
+                            color: $primary;
                             margin: .5em;
                             padding: .3em;
                             border-radius: 5px;
@@ -107,7 +108,6 @@
                         }
 
                         .card-date {
-                            background-color: $danger;
                             color: $white;
                             margin: .5em;
                             padding: .3em;

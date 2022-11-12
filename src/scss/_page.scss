@@ -1,19 +1,16 @@
 .page {
-    height: 150vh;
-
     .cover {
-        position: absolute;
+        position: fixed;
         top: 0;
         border-radius: 0 0 15px 15px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));
-        
+
         .back {
             position: fixed;
             left: 8%;
             top: 3%;
             background-color: transparent;
             width: auto;
-            border-radius: 20px;
+            border-radius: 8px;
             border: 2px solid $white;
             color: $white;
             cursor: pointer;
@@ -21,51 +18,74 @@
             padding-left: 2.5em;
             z-index: 999;
             font-size: .8em;
-    
+            transition: all ease .5s;
+
+            &:hover {
+                background-color: $white;
+                color: $primary;
+                padding: .5em 1em;
+
+                svg {
+                    display: none;
+                }
+            }
+
             svg {
                 height: 60%;
                 position: absolute;
                 left: 0;
                 top: 50%;
-                transform: translate(0,-50%);
+                transform: translate(0, -50%);
                 margin-left: .5em;
             }
         }
-    
+
         img {
             height: 80vh;
             object-fit: cover;
             object-position: top center;
             border-radius: 0 0 15px 15px;
             z-index: -1;
+            mask-image: linear-gradient(to top, #00000000, lighten($color: $primary, $amount: 5) 70%);
+            -webkit-mask-image: linear-gradient(to top, #00000000, lighten($color: $primary, $amount: 5) 70%);
         }
     }
-    
+
     .information {
         position: absolute;
         top: 90%;
-    
+        background: linear-gradient(#00000000, lighten($color: $primary, $amount: 5) 75%);
+
         .about {
             .storyline {
-                margin: 1em 0;
+                background-color: #f8f8f818;
+                border-radius: 10px;
+                padding: 1em 0;
+                margin: 0 5em;
+
                 p {
                     color: $white;
-                    padding: 1em;
+                    margin: 1.5em 0;
+                }
+
+                h3 {
+                    justify-content: flex-start;
                 }
             }
-    
+
             .cast {
                 margin-bottom: 4em;
 
                 @media screen and (min-width: 768px) {
                     justify-content: flex-start !important;
                 }
-    
+
                 figure {
                     margin: .5em 0;
+
                     img {
-                        width: 5em;
-                        height: 5em;
+                        width: 4.5em;
+                        height: 4.5em;
                         border-radius: 50%;
                         object-fit: cover;
 
@@ -74,7 +94,7 @@
                             height: 4em;
                         }
                     }
-    
+
                     figcaption {
                         color: $white;
                         padding: .5em;
@@ -87,16 +107,20 @@
                 }
             }
         }
-    
+
         .options {
             position: relative;
-    
+
             img {
                 height: 20em;
                 border-radius: 15px;
                 object-fit: cover;
+
+                @media screen and (max-width: 768px) {
+                    height: 28em;
+                }
             }
-    
+
             .details {
                 h2 {
                     @media screen and (max-width: 768px) {
@@ -107,6 +131,10 @@
                 h5 {
                     padding: .5em 2.5em;
                     justify-content: flex-start !important;
+
+                    @media screen and (max-width: 768px) {
+                        padding: .5em;
+                    }
                 }
 
                 div {
@@ -121,14 +149,22 @@
                         height: 2em;
                         line-height: 2em;
                         display: block;
-                        border-radius: 15px;
+                        border-radius: 10px;
                         background-color: darken($color: $danger, $amount: 5);
                         transition: all ease-in-out .2s;
-            
+
                         &:hover {
                             background-color: darken($color: $danger, $amount: 10);
                         }
                     }
+                }
+
+                label {
+                    background-color: lighten($color: $primary, $amount: 10);
+                    padding: .4em;
+                    border-radius: 8px;
+                    margin: .2em;
+                    cursor: pointer;
                 }
             }
         }
